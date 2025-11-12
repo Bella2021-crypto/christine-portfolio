@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/static/js/main.7ed0006a.js",
+    "static/media/calm-workspace.jpg": "/static/media/calm-workspace.686693a6a07951e24cf2.jpg",
+    "static/media/organised inbox.png": "/static/media/organised inbox.60849b95137891a1fbf5.png",
+    "static/media/support-dashboard.png": "/static/media/support-dashboard.aa987bba88246e3c9295.png",
+    "static/media/notion-dashboard.png": "/static/media/notion-dashboard.a69db3f4540191a78bab.png",
+    "static/media/calender-layout.png": "/static/media/calender-layout.3cbeadf15268f3d63278.png",
+    "index.html": "/index.html",
+    "main.7ed0006a.js.map": "/static/js/main.7ed0006a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7ed0006a.js"
+  ]
+}
