@@ -2,3 +2,74 @@
   font-family: sans-serif;
   text-align: center;
 }
+/* --- Global Style --- */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FAF7F2;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2F2A26;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Section Cards --- */
+.section {
+  background-color: #fff;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(198, 166, 100, 0.08);
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(198, 166, 100, 0.12);
+}
+
+/* --- Accent Elements --- */
+.accent-line {
+  width: 60px;
+  height: 3px;
+  background-color: #C6A664;
+  margin: 0.5rem 0 1.5rem 0;
+  border-radius: 2px;
+}
+
+/* --- Skill Tags --- */
+.skill-tag {
+  display: inline-block;
+  background-color: #F5EEDD;
+  color: #5A4D37;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  color: #5A4D37;
+  border-top: 1px solid #EADFC4;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #C6A664;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
