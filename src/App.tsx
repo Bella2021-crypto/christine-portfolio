@@ -458,12 +458,13 @@ export default function ChristineMartinPortfolio() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-5">
 
             <a
-              href="mailto:bellarosennaji@gmail.com?subject=Portfolio%20Contact"
-              className="border border-gray-600 px-6 py-3 rounded-full hover:bg-white hover:text-[#2C2C2C] transition"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=bellarosennaji@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             >
-              📧 Email Me
+            📧 Email Me
             </a>
-
+            
             <a
               href=" https://www.linkedin.com/in/christine-martin-a59691344/"
               target="_blank"
