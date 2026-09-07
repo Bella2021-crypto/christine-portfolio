@@ -1,7 +1,10 @@
 // @ts-nocheck
-import calmworkspace from "./calm-workspace.jpg";
 
-export default function ChristineMartinPortfolio() {
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import calmworkspace from "./calm-workspace.jpg";
+import Certifications from "./Certifications";
+
+function ChristineMartinHome() {
   return (
     <div className="min-h-screen bg-[#F8F4EF] text-[#2C2C2C] font-sans">
 
@@ -9,9 +12,12 @@ export default function ChristineMartinPortfolio() {
       <nav className="sticky top-0 z-50 bg-[#F8F4EF]/95 backdrop-blur border-b border-[#E9D8A6]/40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-          <a href="#" className="font-semibold text-lg">
+          <Link
+            to="/"
+            className="font-semibold text-lg hover:text-[#9A7B2F] transition"
+          >
             Christine Martin
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center gap-7 text-sm text-[#555]">
             <a href="#about" className="hover:text-[#9A7B2F] transition">
@@ -26,6 +32,13 @@ export default function ChristineMartinPortfolio() {
               Projects
             </a>
 
+            <Link
+              to="/certifications"
+              className="hover:text-[#9A7B2F] transition"
+            >
+              Certifications
+            </Link>
+
             <a href="#experience" className="hover:text-[#9A7B2F] transition">
               Experience
             </a>
@@ -39,132 +52,120 @@ export default function ChristineMartinPortfolio() {
       </nav>
 
 
-      {/* Hero Section */}
-      <header className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+      {/* Hero */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
           <div>
-
-            <p className="uppercase tracking-[0.25em] text-sm text-[#9A7B2F] mb-5">
+            <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-5">
               Software Engineering • Digital Products
             </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
-              Christine
-              <span className="block">Martin</span>
+            <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+              Christine Martin
             </h1>
 
-            <p className="text-xl md:text-2xl text-[#6F6B63] leading-relaxed max-w-xl mb-8">
+            <p className="mt-6 text-xl text-[#6F6B63] leading-relaxed max-w-xl">
               Aspiring Software Engineer and digital product builder
               passionate about creating useful and thoughtful technology.
             </p>
 
-            <p className="text-[#666] leading-relaxed max-w-xl mb-9">
-              I'm developing my skills in software development while exploring
-              how technology can be used to solve practical problems and create
-              better digital experiences.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
 
               <a
                 href="#projects"
-                className="bg-[#2C2C2C] text-white px-6 py-3 rounded-full hover:opacity-90 transition"
+                className="bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
               >
                 Explore My Projects
               </a>
 
               <a
                 href="#contact"
-                className="border border-[#2C2C2C] px-6 py-3 rounded-full hover:bg-[#2C2C2C] hover:text-white transition"
+                className="border border-[#2C2C2C] px-7 py-3 rounded-full hover:bg-[#2C2C2C] hover:text-white transition"
               >
                 Get In Touch
               </a>
 
             </div>
-
           </div>
 
 
-          <div className="flex justify-center md:justify-end">
-
-            <div className="relative">
-
-              <div className="absolute -inset-3 border border-[#E9D8A6] rounded-[2rem] rotate-3"></div>
-
-              <img
-                src={calmworkspace}
-                alt="Christine's workspace"
-                className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-[2rem] shadow-lg"
-              />
-
-            </div>
-
+          <div className="flex justify-center">
+            <img
+              src={calmworkspace}
+              alt="Calm workspace"
+              className="rounded-3xl shadow-xl w-full max-w-lg object-cover"
+            />
           </div>
 
         </div>
-
-      </header>
-
-
-      {/* About Section */}
-      <section id="about" className="bg-white py-20">
-
-        <div className="max-w-4xl mx-auto px-6 text-center">
-
-          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-            About Me
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8">
-            A professional background with a growing focus on technology.
-          </h2>
-
-          <p className="text-lg leading-relaxed text-[#555]">
-            I'm Christine, a customer service and administrative professional
-            developing my skills in software engineering and digital product
-            development.
-          </p>
-
-          <p className="mt-6 text-lg leading-relaxed text-[#555]">
-            My professional experience has taught me how to understand people's
-            needs, communicate effectively, solve problems, manage information,
-            and stay organized in fast-moving environments.
-          </p>
-
-          <p className="mt-6 text-lg leading-relaxed text-[#555]">
-            I'm now applying those skills to technology. I enjoy learning how
-            digital products work, experimenting with new technologies, and
-            turning ideas into practical solutions that people can use.
-          </p>
-
-          <p className="mt-6 text-lg leading-relaxed text-[#555]">
-            My long-term goal is to grow into a skilled software engineer and
-            contribute to products that make everyday experiences simpler,
-            more useful, and more accessible.
-          </p>
-
-        </div>
-
       </section>
 
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-
+      {/* About */}
+      <section id="about" className="bg-white py-20">
         <div className="max-w-5xl mx-auto px-6">
 
-          <div className="text-center mb-14">
-
+          <div className="text-center mb-12">
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-              Skills & Technologies
+              About Me
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold">
-              Tools I'm learning and working with.
+              From problem-solving to building technology.
+            </h2>
+          </div>
+
+
+          <div className="max-w-3xl mx-auto text-[#6F6B63] leading-relaxed space-y-5">
+
+            <p>
+              I am a customer service and administrative professional
+              developing my skills in software engineering and digital
+              product development.
+            </p>
+
+            <p>
+              My professional experience has taught me the importance of
+              understanding user needs, communicating clearly, solving
+              problems, managing information, and staying organized.
+            </p>
+
+            <p>
+              I am now applying these skills to technology, learning how
+              digital products are designed, developed, integrated, and
+              improved to solve practical problems.
+            </p>
+
+            <p>
+              My long-term goal is to become a skilled software engineer
+              capable of building useful, reliable, and user-focused
+              digital products.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Skills */}
+      <section id="skills" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <div className="text-center mb-12">
+            <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
+              Skills
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-semibold">
+              Building a strong technical foundation.
             </h2>
 
+            <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+              I am continuously developing technical and professional
+              skills through structured learning and hands-on projects.
+            </p>
           </div>
 
 
@@ -172,313 +173,413 @@ export default function ChristineMartinPortfolio() {
 
             <SkillCard
               title="Frontend Development"
-              description="Building responsive interfaces and exploring modern web development."
-              skills="HTML • CSS • JavaScript • React • Next.js"
+              items={[
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React",
+                "Next.js",
+                "Responsive Design",
+              ]}
             />
 
             <SkillCard
               title="Backend Development"
-              description="Learning how applications communicate with servers, databases, and APIs."
-              skills="APIs • Prisma • Server-side development • Databases"
+              items={[
+                "Node.js",
+                "APIs",
+                "Server-side concepts",
+                "Application architecture",
+              ]}
             />
 
             <SkillCard
               title="Development Tools"
-              description="Using modern tools to develop, manage, and deploy projects."
-              skills="Git • GitHub • VS Code • Vercel"
+              items={[
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Vercel",
+                "Debugging",
+                "Deployment",
+              ]}
             />
 
             <SkillCard
               title="Database & Media"
-              description="Working with application data and digital media management."
-              skills="Neon • Prisma • Cloudinary"
+              items={[
+                "Prisma",
+                "Neon",
+                "Cloudinary",
+                "Database concepts",
+                "Image management",
+              ]}
             />
 
             <SkillCard
               title="Payments & Integrations"
-              description="Exploring how digital products connect with external services."
-              skills="Paystack • Flutterwave • APIs"
+              items={[
+                "Paystack",
+                "Flutterwave",
+                "API integration",
+                "Third-party services",
+              ]}
             />
 
             <SkillCard
               title="Professional Skills"
-              description="Skills developed through professional experience and applied to technology."
-              skills="Problem Solving • Communication • Organization • Customer Empathy"
+              items={[
+                "Customer Service",
+                "Problem Solving",
+                "Communication",
+                "Data Entry",
+                "Time Management",
+                "Organization",
+              ]}
             />
 
           </div>
 
         </div>
-
       </section>
 
 
-      {/* Projects Section */}
-      <section id="projects" className="bg-white py-20">
+      {/* Certifications Preview */}
+      <section id="certifications-preview" className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <div className="max-w-5xl mx-auto px-6">
+          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
+            Certifications & Learning
+          </p>
 
-          <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Growing through continuous learning.
+          </h2>
+
+          <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            A selection of certifications and learning experiences that
+            reflect my continued development in technology, software
+            development, and professional skills.
+          </p>
+
+          <div className="mt-8">
+
+            <Link
+              to="/certifications"
+              className="inline-block bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
+            >
+              View All Certifications →
+            </Link>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Projects */}
+      <section id="projects" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <div className="text-center mb-12">
 
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-              Selected Projects
+              Projects
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold">
-              Things I've been building.
+              Learning by building.
             </h2>
 
             <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
-              These projects reflect my interest in software development,
-              digital products, e-commerce, and creating useful online
-              experiences.
+              Practical projects where I explore software development,
+              product thinking, integrations, and real-world application
+              architecture.
             </p>
 
           </div>
 
 
-          {/* Gemora */}
-          <ProjectCard
-            title="Gemora"
-            category="Full-Stack Marketplace"
-            description="A luxury-focused marketplace concept exploring how buyers and sellers can interact through a modern e-commerce experience."
-            technologies="Next.js • React • Prisma • Neon • Paystack • Flutterwave • Cloudinary • Vercel"
-            features={[
-              "Marketplace and product experience",
-              "Database-driven application architecture",
-              "Payment integration",
-              "Image and media management",
-              "Deployment and troubleshooting",
-            ]}
-          />
+          <div className="grid gap-8">
+
+            <ProjectCard
+              title="Gemora"
+              category="Full-Stack Marketplace"
+              description="A luxury-focused marketplace concept exploring how buyers and sellers can interact through a modern e-commerce experience."
+              technologies="Next.js • React • Prisma • Neon • Paystack • Flutterwave • Cloudinary • Vercel"
+              features={[
+                "Marketplace and product experience",
+                "Database-driven application architecture",
+                "Payment integration",
+                "Image and media management",
+                "Deployment and troubleshooting",
+              ]}
+            />
 
 
-          {/* Nuvistine */}
-          <ProjectCard
-            title="Nuvistine Global"
-            category="Fashion Marketplace"
-            description="A fashion marketplace concept focused on bringing clothing and related fashion products into a modern digital shopping experience."
-            technologies="Web Development • E-commerce • Product Design"
-            features={[
-              "Fashion marketplace concept",
-              "Product and shopping experience",
-              "Brand development",
-              "Digital commerce exploration",
-            ]}
-          />
+            <ProjectCard
+              title="Nuvistine Global"
+              category="Digital Marketplace"
+              description="A marketplace concept focused on creating a modern shopping experience with structured product discovery and digital commerce functionality."
+              technologies="React • Next.js • Database • APIs • Cloudinary • Vercel"
+              features={[
+                "Product marketplace concept",
+                "Modern responsive interface",
+                "Product organization",
+                "Database integration",
+                "Deployment and testing",
+              ]}
+            />
 
 
-          {/* Student Marketplace */}
-          <ProjectCard
-            title="Student Marketplace"
-            category="Digital Product Concept"
-            description="A marketplace concept designed around the needs of students, exploring how students could buy, sell, and discover useful products within a digital community."
-            technologies="Product Development • Web Development • Marketplace Design"
-            features={[
-              "Identified a specific user community",
-              "Explored marketplace functionality",
-              "Focused on practical user needs",
-              "Developed the concept around accessibility and usability",
-            ]}
-          />
+            <ProjectCard
+              title="Student Marketplace"
+              category="Student-Focused Digital Product"
+              description="A marketplace concept designed to help students buy and sell products within a simple and accessible digital environment."
+              technologies="React • Next.js • Database • APIs • Vercel"
+              features={[
+                "Student-focused marketplace",
+                "Product listings",
+                "User-centered interface",
+                "Responsive design",
+                "Practical digital solution",
+              ]}
+            />
+
+          </div>
 
         </div>
-
       </section>
 
 
-      {/* Project Philosophy */}
-      <section className="py-20">
-
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* How I Learn */}
+      <section className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
           <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
             How I Learn
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">
             Learning by building.
           </h2>
 
-          <p className="text-lg leading-relaxed text-[#555]">
-            I learn best when I can apply new concepts to something practical.
-            Instead of only studying technology theoretically, I enjoy taking
-            an idea and exploring how it could become a functional product.
+          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            I combine structured learning with practical experimentation.
+            Instead of only studying concepts, I use projects to understand
+            how different technologies work together and how they can be
+            used to solve real problems.
           </p>
 
-          <p className="mt-6 text-lg leading-relaxed text-[#555]">
-            Each project gives me an opportunity to experiment, encounter
-            problems, research solutions, and understand how different parts
-            of a digital product work together.
-          </p>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
+
+            <GoalCard
+              title="Learn"
+              description="Develop strong foundations in programming, software engineering, databases, APIs, and modern development tools."
+            />
+
+            <GoalCard
+              title="Build"
+              description="Turn what I learn into practical projects that demonstrate technical skills and product thinking."
+            />
+
+            <GoalCard
+              title="Grow"
+              description="Continuously improve through feedback, new technologies, certifications, and hands-on experience."
+            />
+
+          </div>
 
         </div>
-
       </section>
 
 
       {/* Experience */}
-      <section id="experience" className="bg-white py-20">
+      <section id="experience" className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
 
-        <div className="max-w-4xl mx-auto px-6">
-
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
 
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
               Experience
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold">
-              Where technology meets professional experience.
+              Professional experience.
             </h2>
 
           </div>
 
 
-          <div className="border-l-2 border-[#E9D8A6] pl-8">
+          <div className="bg-white rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10">
 
-            <div className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
 
-              <p className="text-sm text-[#9A7B2F] font-medium mb-2">
-                Customer Service & Administrative Support
-              </p>
+              <div>
 
-              <h3 className="text-2xl font-semibold mb-4">
+                <h3 className="text-2xl font-semibold">
+                  Customer Service & Administrative Support
+                </h3>
+
+                <p className="mt-2 text-[#9A7B2F]">
+                  D.E.R Limited — Lagos
+                </p>
+
+              </div>
+
+              <p className="text-sm text-[#777]">
                 Professional Experience
-              </h3>
-
-              <p className="text-[#555] leading-relaxed">
-                My professional experience has involved customer
-                communication, administrative coordination, scheduling,
-                document management, data entry, and supporting day-to-day
-                business operations.
-              </p>
-
-              <p className="mt-4 text-[#555] leading-relaxed">
-                These experiences have strengthened my ability to understand
-                users, identify problems, communicate clearly, and create
-                organized processes — skills I now bring into my technology
-                journey.
               </p>
 
             </div>
 
 
-            <div>
+            <div className="mt-7 text-[#6F6B63] leading-relaxed">
 
-              <p className="text-sm text-[#9A7B2F] font-medium mb-2">
-                Current Focus
+              <p>
+                My professional experience has involved customer
+                communication, administrative support, information
+                management, scheduling, document preparation, and
+                problem-solving.
               </p>
 
-              <h3 className="text-2xl font-semibold mb-4">
-                Software Engineering & Digital Products
-              </h3>
-
-              <p className="text-[#555] leading-relaxed">
-                I am currently developing my technical skills through
-                independent learning and hands-on projects, with a particular
-                interest in web development, full-stack applications,
-                marketplaces, and digital products.
+              <p className="mt-4">
+                These responsibilities have strengthened my ability to
+                understand problems, communicate with different people,
+                manage multiple tasks, and work carefully with information.
               </p>
+
+              <p className="mt-4">
+                I am now combining these transferable skills with software
+                engineering and digital product development.
+              </p>
+
+            </div>
+
+
+            <div className="mt-7 flex flex-wrap gap-3">
+
+              {[
+                "Customer Service",
+                "Administrative Support",
+                "Communication",
+                "Scheduling",
+                "Data Management",
+                "Problem Solving",
+                "Organization",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 rounded-full bg-[#F8F4EF] text-sm text-[#555]"
+                >
+                  {skill}
+                </span>
+              ))}
 
             </div>
 
           </div>
 
         </div>
-
       </section>
 
 
-      {/* Goals */}
-      <section className="py-20">
-
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* Direction / Goals */}
+      <section className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
           <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
             Direction
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8">
-            Building toward a career in software engineering.
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Where I am going.
           </h2>
 
-          <p className="text-lg leading-relaxed text-[#555]">
-            I'm focused on strengthening my foundations in software
-            development, expanding my full-stack capabilities, and gaining
-            experience building real-world applications.
+          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            My goal is to grow from an aspiring software engineer into a
+            well-rounded developer capable of contributing to meaningful
+            digital products and building solutions that people can use.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-10 text-left">
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
 
             <GoalCard
               title="Learn"
-              text="Continue developing strong foundations in programming, web development, databases, and software engineering."
+              description="Strengthen my understanding of software engineering and modern development practices."
             />
 
             <GoalCard
               title="Build"
-              text="Create practical projects that challenge me to apply what I learn and develop better problem-solving skills."
+              description="Create practical digital products that demonstrate both technical ability and problem-solving."
             />
 
             <GoalCard
               title="Grow"
-              text="Build professional experience and contribute to meaningful digital products and technology solutions."
+              description="Gain professional experience, collaborate with other developers, and continue developing my technical career."
             />
 
           </div>
 
         </div>
-
       </section>
 
 
       {/* Contact */}
-      <footer
-        id="contact"
-        className="bg-[#2C2C2C] text-white py-16"
-      >
-
+      <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
-          <p className="uppercase tracking-[0.2em] text-sm text-[#E9D8A6] mb-4">
+          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
             Contact
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold">
             Let's connect.
           </h2>
 
-          <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-            I'm always interested in connecting with people working on
-            interesting ideas, digital products, and technology.
+          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            I am open to opportunities to learn, collaborate, contribute,
+            and grow within the technology and digital product space.
           </p>
 
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
 
-            <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=bellarosennaji@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            📧 Email Me
-            </a>
-            
-            <a
-              href=" https://www.linkedin.com/in/christine-martin-a59691344/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-600 px-6 py-3 rounded-full hover:bg-white hover:text-[#2C2C2C] transition"
-            >
-              LinkedIn
-            </a>
+  <a
+    href="mailto:bellarosennaji@gmail.com"
+    className="bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
+  >
+    📧 Email Me
+  </a>
 
-          </div>
+  <a
+    href="https://www.linkedin.com/in/christine-martin-a59691344/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="border border-[#2C2C2C] px-7 py-3 rounded-full hover:bg-[#2C2C2C] hover:text-white transition"
+  >
+    LinkedIn
+  </a>
+
+</div>
+
+        </div>
+      </section>
 
 
-          <p className="mt-12 text-sm text-gray-500">
+      {/* Footer */}
+      <footer className="bg-[#2C2C2C] text-white py-10">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Christine Martin. All rights reserved.
+          </p>
+
+          <p className="text-xs text-gray-500 mt-2">
+            Aspiring Software Engineer & Digital Product Builder
           </p>
 
         </div>
@@ -490,30 +591,39 @@ export default function ChristineMartinPortfolio() {
 }
 
 
-/* ================================= */
-/* Reusable Components */
-/* ================================= */
+/* -------------------------------- */
+/* Skill Card                       */
+/* -------------------------------- */
 
-function SkillCard({ title, description, skills }) {
+function SkillCard({ title, items }) {
   return (
-    <div className="bg-[#F8F4EF] rounded-2xl p-7 border border-[#E9D8A6]/30">
+    <div className="bg-white rounded-2xl border border-[#E9D8A6]/50 p-7 hover:shadow-lg transition">
 
-      <h3 className="text-xl font-semibold mb-3">
+      <h3 className="text-xl font-semibold mb-5">
         {title}
       </h3>
 
-      <p className="text-sm text-[#777] leading-relaxed mb-5">
-        {description}
-      </p>
+      <div className="flex flex-wrap gap-2">
 
-      <p className="text-sm font-medium text-[#4F4B45]">
-        {skills}
-      </p>
+        {items.map((item) => (
+          <span
+            key={item}
+            className="px-3 py-2 rounded-full bg-[#F8F4EF] text-sm text-[#555]"
+          >
+            {item}
+          </span>
+        ))}
+
+      </div>
 
     </div>
   );
 }
 
+
+/* -------------------------------- */
+/* Project Card                     */
+/* -------------------------------- */
 
 function ProjectCard({
   title,
@@ -523,66 +633,59 @@ function ProjectCard({
   features,
 }) {
   return (
-    <article className="border border-[#E9D8A6]/40 rounded-3xl p-8 md:p-10 mb-8 hover:shadow-md transition">
+    <article className="bg-white rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10 hover:shadow-lg transition">
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
 
         <div>
 
-          <p className="uppercase tracking-[0.15em] text-xs text-[#9A7B2F] mb-3">
+          <p className="uppercase tracking-[0.15em] text-xs text-[#9A7B2F] mb-2">
             {category}
           </p>
 
-          <h3 className="text-3xl font-semibold mb-5">
+          <h3 className="text-2xl md:text-3xl font-semibold">
             {title}
           </h3>
 
-          <p className="text-[#555] leading-relaxed mb-6">
-            {description}
-          </p>
-
-          <div className="bg-[#F8F4EF] rounded-xl p-5">
-
-            <p className="text-sm font-semibold mb-2">
-              Technologies
-            </p>
-
-            <p className="text-sm text-[#666] leading-relaxed">
-              {technologies}
-            </p>
-
-          </div>
-
         </div>
 
+      </div>
 
-        <div>
 
-          <h4 className="font-semibold text-lg mb-5">
-            Project Highlights
-          </h4>
+      <p className="mt-5 text-[#6F6B63] leading-relaxed max-w-3xl">
+        {description}
+      </p>
 
-          <ul className="space-y-4">
 
-            {features.map((feature, index) => (
-              <li
-                key={index}
-                className="flex gap-3 text-[#555]"
-              >
-                <span className="text-[#9A7B2F] mt-1">
-                  ✦
-                </span>
+      <div className="mt-6">
 
-                <span>
-                  {feature}
-                </span>
+        <p className="text-sm font-medium mb-3">
+          Technologies
+        </p>
 
-              </li>
-            ))}
+        <p className="text-sm text-[#777]">
+          {technologies}
+        </p>
 
-          </ul>
+      </div>
 
-        </div>
+
+      <div className="mt-7">
+
+        <p className="text-sm font-medium mb-3">
+          Key Features
+        </p>
+
+        <ul className="grid md:grid-cols-2 gap-2 text-sm text-[#6F6B63]">
+
+          {features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2">
+              <span className="text-[#9A7B2F]">•</span>
+              <span>{feature}</span>
+            </li>
+          ))}
+
+        </ul>
 
       </div>
 
@@ -591,18 +694,49 @@ function ProjectCard({
 }
 
 
-function GoalCard({ title, text }) {
-  return (
-    <div className="bg-white rounded-2xl p-7 shadow-sm border border-[#E9D8A6]/30">
+/* -------------------------------- */
+/* Goal Card                        */
+/* -------------------------------- */
 
-      <h3 className="text-xl font-semibold mb-3">
+function GoalCard({ title, description }) {
+  return (
+    <div className="bg-[#F8F4EF] rounded-2xl border border-[#E9D8A6]/40 p-7">
+
+      <h3 className="text-xl font-semibold">
         {title}
       </h3>
 
-      <p className="text-[#666] leading-relaxed">
-        {text}
+      <p className="mt-3 text-[#6F6B63] leading-relaxed text-sm">
+        {description}
       </p>
 
     </div>
+  );
+}
+
+
+/* -------------------------------- */
+/* React Router                     */
+/* -------------------------------- */
+
+export default function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<ChristineMartinHome />}
+        />
+
+        <Route
+          path="/certifications"
+          element={<Certifications />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }

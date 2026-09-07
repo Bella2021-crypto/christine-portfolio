@@ -1,75 +1,79 @@
 import React from "react";
 
-import cert1 from "./assets/certificates/certificate1.jpg";
-import cert2 from "./assets/certificates/certificate2.jpg";
-import cert3 from "./assets/certificates/certificate3.jpg";
-import cert4 from "./assets/certificates/certificate4.jpg";
+import cert1 from "./assets/certificates/certificate1.png";
+
 
 const certificates = [
   {
-    title: "Certificate Name",
-    organization: "Issuing Organization",
+    title: "Sales Hub Software",
+    organization: "Hubspot",
     year: "2026",
     image: cert1,
   },
   {
-    title: "Certificate Name",
+    title: "Certificate Name 2",
     organization: "Issuing Organization",
     year: "2026",
     image: cert2,
   },
   {
-    title: "Certificate Name",
+    title: "Certificate Name 3",
     organization: "Issuing Organization",
     year: "2026",
     image: cert3,
   },
   {
-    title: "Certificate Name",
+    title: "Certificate Name 4",
     organization: "Issuing Organization",
     year: "2026",
     image: cert4,
   },
+  {
+    title: "Certificate Name 5",
+    organization: "Issuing Organization",
+    year: "2026",
+    image: cert5,
+  },
 ];
 
-function Certifications() {
+export default function Certifications() {
   return (
-    <div className="min-h-screen bg-[#F8F4EF] text-[#292723]">
+    <div className="min-h-screen bg-[#F8F4EF] text-[#2C2C2C] font-sans">
 
-      {/* Header */}
-      <header className="border-b border-[#E9D8A6]/40 bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-[#F8F4EF]/95 backdrop-blur border-b border-[#E9D8A6]/40">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
           <a
             href="/"
-            className="font-semibold text-lg hover:text-[#9A7B2F]"
+            className="font-semibold text-lg hover:text-[#9A7B2F] transition"
           >
             Christine Martin
           </a>
 
           <a
             href="/"
-            className="text-sm hover:text-[#9A7B2F]"
+            className="text-sm text-[#555] hover:text-[#9A7B2F] transition"
           >
             ← Back to Portfolio
           </a>
 
         </div>
-      </header>
+      </nav>
 
-      {/* Hero */}
-      <section className="py-20">
+      {/* Header */}
+      <section className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
 
-          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-            Certifications
+          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-4">
+            Certifications & Learning
           </p>
 
           <h1 className="text-4xl md:text-5xl font-semibold">
             Continuous learning.
           </h1>
 
-          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
             A collection of certifications and courses that reflect my
             continued development in technology, software development,
             and professional skills.
@@ -85,9 +89,9 @@ function Certifications() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {certificates.map((certificate, index) => (
-              <div
+              <article
                 key={index}
-                className="bg-white border border-[#E9D8A6]/50 rounded-2xl overflow-hidden hover:shadow-lg transition"
+                className="bg-white rounded-2xl overflow-hidden border border-[#E9D8A6]/40 hover:shadow-lg transition"
               >
 
                 {/* Certificate Image */}
@@ -103,7 +107,7 @@ function Certifications() {
                   />
                 </a>
 
-                {/* Details */}
+                {/* Certificate Details */}
                 <div className="p-6">
 
                   <h2 className="text-xl font-semibold">
@@ -122,14 +126,14 @@ function Certifications() {
                     href={certificate.image}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-5 text-sm underline hover:text-[#9A7B2F]"
+                    className="inline-block mt-5 text-sm underline hover:text-[#9A7B2F] transition"
                   >
                     View Certificate →
                   </a>
 
                 </div>
 
-              </div>
+              </article>
             ))}
 
           </div>
@@ -138,14 +142,18 @@ function Certifications() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#E9D8A6]/40 bg-white py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center text-sm text-[#777]">
-          © 2026 Christine Martin. All rights reserved.
+      <footer className="bg-[#2C2C2C] text-white py-10">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} Christine Martin. All rights reserved.
+          </p>
+
         </div>
+
       </footer>
 
     </div>
   );
 }
-
-export default Certifications;
