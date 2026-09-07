@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cert1 from "./assets/certificates/certificate1.png";
+import cert2 from "./assets/certificates/certificate2.png";
 
 const certificates = [
   {
@@ -8,6 +9,13 @@ const certificates = [
     organization: "HubSpot",
     year: "2026",
     image: cert1,
+  },
+
+  {
+    title: "English Proficiency Certification",
+    organization: "CEFR",
+    year: "2026",
+    image: cert2,
   },
 ];
 
