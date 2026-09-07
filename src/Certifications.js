@@ -1,38 +1,13 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import cert1 from "./assets/certificates/certificate1.png";
-
 
 const certificates = [
   {
     title: "Sales Hub Software",
-    organization: "Hubspot",
+    organization: "HubSpot",
     year: "2026",
     image: cert1,
-  },
-  {
-    title: "Certificate Name 2",
-    organization: "Issuing Organization",
-    year: "2026",
-    image: cert2,
-  },
-  {
-    title: "Certificate Name 3",
-    organization: "Issuing Organization",
-    year: "2026",
-    image: cert3,
-  },
-  {
-    title: "Certificate Name 4",
-    organization: "Issuing Organization",
-    year: "2026",
-    image: cert4,
-  },
-  {
-    title: "Certificate Name 5",
-    organization: "Issuing Organization",
-    year: "2026",
-    image: cert5,
   },
 ];
 
@@ -44,22 +19,23 @@ export default function Certifications() {
       <nav className="sticky top-0 z-50 bg-[#F8F4EF]/95 backdrop-blur border-b border-[#E9D8A6]/40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-          <a
-            href="/"
+          <Link
+            to="/"
             className="font-semibold text-lg hover:text-[#9A7B2F] transition"
           >
             Christine Martin
-          </a>
+          </Link>
 
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-sm text-[#555] hover:text-[#9A7B2F] transition"
           >
             ← Back to Portfolio
-          </a>
+          </Link>
 
         </div>
       </nav>
+
 
       {/* Header */}
       <section className="py-20 md:py-28">
@@ -74,13 +50,14 @@ export default function Certifications() {
           </h1>
 
           <p className="mt-6 text-lg text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
-            A collection of certifications and courses that reflect my
-            continued development in technology, software development,
-            and professional skills.
+            A collection of certifications and learning experiences that
+            reflect my continued development in technology, software
+            development, and professional skills.
           </p>
 
         </div>
       </section>
+
 
       {/* Certificates */}
       <section className="pb-24">
@@ -94,7 +71,6 @@ export default function Certifications() {
                 className="bg-white rounded-2xl overflow-hidden border border-[#E9D8A6]/40 hover:shadow-lg transition"
               >
 
-                {/* Certificate Image */}
                 <a
                   href={certificate.image}
                   target="_blank"
@@ -107,7 +83,6 @@ export default function Certifications() {
                   />
                 </a>
 
-                {/* Certificate Details */}
                 <div className="p-6">
 
                   <h2 className="text-xl font-semibold">
@@ -141,6 +116,7 @@ export default function Certifications() {
         </div>
       </section>
 
+
       {/* Footer */}
       <footer className="bg-[#2C2C2C] text-white py-10">
 
@@ -148,6 +124,10 @@ export default function Certifications() {
 
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Christine Martin. All rights reserved.
+          </p>
+
+          <p className="text-xs text-gray-500 mt-2">
+            Aspiring Software Engineer & Digital Product Builder
           </p>
 
         </div>
