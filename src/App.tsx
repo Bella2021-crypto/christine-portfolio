@@ -1,17 +1,37 @@
-// @ts-nocheck
+
+ // @ts-nocheck
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import calmworkspace from "./calm-workspace.jpg";
 import Certifications from "./Certifications";
 
+const cvDocuments = [
+  {
+    title: "Administrative & Project Support",
+    description:
+      "For administrative, project coordination, operations, and office support roles.",
+    file: "/cvs/Christine-Martin-Administrative-CV.pdf",
+  },
+  {
+    title: "Customer Support & Virtual Assistant",
+    description:
+      "For remote customer service, virtual assistant, and client support opportunities.",
+    file: "/cvs/Christine-Martin-Customer-Support-CV.pdf",
+  },
+  {
+    title: "Software Developer",
+    description:
+      "For software development internships and junior technical opportunities.",
+    file: "/cvs/Christine-Martin-Software-Developer-CV.pdf",
+  },
+];
+
 function ChristineMartinHome() {
   return (
     <div className="min-h-screen bg-[#F8F4EF] text-[#2C2C2C] font-sans">
-
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-[#F8F4EF]/95 backdrop-blur border-b border-[#E9D8A6]/40">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <Link
             to="/"
             className="font-semibold text-lg hover:text-[#9A7B2F] transition"
@@ -19,43 +39,38 @@ function ChristineMartinHome() {
             Christine Martin
           </Link>
 
-          <div className="hidden md:flex items-center gap-7 text-sm text-[#555]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[#555]">
             <a href="#about" className="hover:text-[#9A7B2F] transition">
               About
             </a>
-
             <a href="#skills" className="hover:text-[#9A7B2F] transition">
               Skills
             </a>
-
             <a href="#projects" className="hover:text-[#9A7B2F] transition">
               Projects
             </a>
-
+            <a href="#experience" className="hover:text-[#9A7B2F] transition">
+              Experience
+            </a>
+            <a href="#my-cvs" className="hover:text-[#9A7B2F] transition">
+              My CVs
+            </a>
             <Link
               to="/certifications"
               className="hover:text-[#9A7B2F] transition"
             >
               Certifications
             </Link>
-
-            <a href="#experience" className="hover:text-[#9A7B2F] transition">
-              Experience
-            </a>
-
             <a href="#contact" className="hover:text-[#9A7B2F] transition">
               Contact
             </a>
           </div>
-
         </div>
       </nav>
-
 
       {/* Hero */}
       <section className="py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
-
           <div>
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-5">
               Software Engineering • Digital Products
@@ -71,7 +86,6 @@ function ChristineMartinHome() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-
               <a
                 href="#projects"
                 className="bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
@@ -85,10 +99,8 @@ function ChristineMartinHome() {
               >
                 Get In Touch
               </a>
-
             </div>
           </div>
-
 
           <div className="flex justify-center">
             <img
@@ -97,15 +109,12 @@ function ChristineMartinHome() {
               className="rounded-3xl shadow-xl w-full max-w-lg object-cover"
             />
           </div>
-
         </div>
       </section>
 
-
       {/* About */}
-      <section id="about" className="bg-white py-20">
+      <section id="about" className="bg-white py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
-
           <div className="text-center mb-12">
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
               About Me
@@ -116,9 +125,7 @@ function ChristineMartinHome() {
             </h2>
           </div>
 
-
           <div className="max-w-3xl mx-auto text-[#6F6B63] leading-relaxed space-y-5">
-
             <p>
               I am a customer service and administrative professional
               developing my skills in software engineering and digital
@@ -142,17 +149,13 @@ function ChristineMartinHome() {
               capable of building useful, reliable, and user-focused
               digital products.
             </p>
-
           </div>
-
         </div>
       </section>
 
-
       {/* Skills */}
-      <section id="skills" className="py-20">
+      <section id="skills" className="py-20 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
-
           <div className="text-center mb-12">
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
               Skills
@@ -168,9 +171,7 @@ function ChristineMartinHome() {
             </p>
           </div>
 
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
             <SkillCard
               title="Frontend Development"
               items={[
@@ -237,52 +238,14 @@ function ChristineMartinHome() {
                 "Organization",
               ]}
             />
-
           </div>
-
         </div>
       </section>
-
-
-      {/* Certifications Preview */}
-      <section id="certifications-preview" className="bg-white py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-            Certifications & Learning
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Growing through continuous learning.
-          </h2>
-
-          <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
-            A selection of certifications and learning experiences that
-            reflect my continued development in technology, software
-            development, and professional skills.
-          </p>
-
-          <div className="mt-8">
-
-            <Link
-              to="/certifications"
-              className="inline-block bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
-            >
-              View All Certifications →
-            </Link>
-
-          </div>
-
-        </div>
-      </section>
-
 
       {/* Projects */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-20 bg-white scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
-
           <div className="text-center mb-12">
-
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
               Projects
             </p>
@@ -296,12 +259,9 @@ function ChristineMartinHome() {
               product thinking, integrations, and real-world application
               architecture.
             </p>
-
           </div>
 
-
           <div className="grid gap-8">
-
             <ProjectCard
               title="Gemora"
               category="Full-Stack Marketplace"
@@ -316,21 +276,19 @@ function ChristineMartinHome() {
               ]}
             />
 
-
             <ProjectCard
               title="Nuvistine Global"
               category="Digital Marketplace"
-              description="A marketplace concept focused on creating a modern shopping experience with structured product discovery and digital commerce functionality."
-              technologies="React • Next.js • Database • APIs • Cloudinary • Vercel"
+              description="An e-commerce project focused on creating a modern shopping experience with product discovery and digital commerce functionality."
+              technologies="React • Next.js • TypeScript • Prisma • Neon • Paystack • Vercel"
               features={[
-                "Product marketplace concept",
-                "Modern responsive interface",
-                "Product organization",
-                "Database integration",
-                "Deployment and testing",
+                "Product discovery and organization",
+                "Responsive shopping interface",
+                "Customer registration and login",
+                "Cart and order functionality",
+                "Database integration and deployment",
               ]}
             />
-
 
             <ProjectCard
               title="Student Marketplace"
@@ -338,69 +296,21 @@ function ChristineMartinHome() {
               description="A marketplace concept designed to help students buy and sell products within a simple and accessible digital environment."
               technologies="React • Next.js • Database • APIs • Vercel"
               features={[
-                "Student-focused marketplace",
-                "Product listings",
+                "Student-focused marketplace concept",
+                "Product listing experience",
                 "User-centered interface",
                 "Responsive design",
                 "Practical digital solution",
               ]}
             />
-
           </div>
-
         </div>
       </section>
-
-
-      {/* How I Learn */}
-      <section className="bg-white py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-            How I Learn
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Learning by building.
-          </h2>
-
-          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
-            I combine structured learning with practical experimentation.
-            Instead of only studying concepts, I use projects to understand
-            how different technologies work together and how they can be
-            used to solve real problems.
-          </p>
-
-
-          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
-
-            <GoalCard
-              title="Learn"
-              description="Develop strong foundations in programming, software engineering, databases, APIs, and modern development tools."
-            />
-
-            <GoalCard
-              title="Build"
-              description="Turn what I learn into practical projects that demonstrate technical skills and product thinking."
-            />
-
-            <GoalCard
-              title="Grow"
-              description="Continuously improve through feedback, new technologies, certifications, and hands-on experience."
-            />
-
-          </div>
-
-        </div>
-      </section>
-
 
       {/* Experience */}
-      <section id="experience" className="py-20">
+      <section id="experience" className="py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
-
           <div className="text-center mb-12">
-
             <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
               Experience
             </p>
@@ -409,15 +319,16 @@ function ChristineMartinHome() {
               Professional experience.
             </h2>
 
+            <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+              Experience in customer communication, administration, and
+              operational support, bringing transferable skills into
+              software development.
+            </p>
           </div>
 
-
-          <div className="bg-white rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10">
-
+          <article className="bg-white rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10 hover:shadow-lg transition">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
               <div>
-
                 <h3 className="text-2xl font-semibold">
                   Customer Service & Administrative Support
                 </h3>
@@ -425,18 +336,14 @@ function ChristineMartinHome() {
                 <p className="mt-2 text-[#9A7B2F]">
                   D.E.R Limited — Lagos
                 </p>
-
               </div>
 
-              <p className="text-sm text-[#777]">
+              <span className="text-sm text-[#777]">
                 Professional Experience
-              </p>
-
+              </span>
             </div>
 
-
             <div className="mt-7 text-[#6F6B63] leading-relaxed">
-
               <p>
                 My professional experience has involved customer
                 communication, administrative support, information
@@ -454,12 +361,9 @@ function ChristineMartinHome() {
                 I am now combining these transferable skills with software
                 engineering and digital product development.
               </p>
-
             </div>
 
-
             <div className="mt-7 flex flex-wrap gap-3">
-
               {[
                 "Customer Service",
                 "Administrative Support",
@@ -476,19 +380,154 @@ function ChristineMartinHome() {
                   {skill}
                 </span>
               ))}
-
             </div>
-
-          </div>
-
+          </article>
         </div>
       </section>
 
+      {/* My CVs */}
+      <section id="my-cvs" className="py-20 bg-white scroll-mt-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
+              Professional Documents
+            </p>
 
-      {/* Direction / Goals */}
+            <h2 className="text-3xl md:text-4xl font-semibold">
+              My CVs
+            </h2>
+
+            <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+              Explore my professional experience, customer support
+              background, and developing skills in software engineering.
+              Each CV is tailored to a different career direction.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cvDocuments.map((cv) => (
+              <article
+                key={cv.file}
+                className="bg-[#F8F4EF] border border-[#E9D8A6]/70 rounded-2xl p-7 flex flex-col hover:shadow-lg transition"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white border border-[#E9D8A6]/60 flex items-center justify-center mb-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6M8 13h8M8 17h8" />
+                  </svg>
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3">
+                  {cv.title}
+                </h3>
+
+                <p className="text-sm text-[#6F6B63] leading-6 mb-6 flex-grow">
+                  {cv.description}
+                </p>
+
+                <div className="flex flex-wrap gap-x-5 gap-y-3 pt-4 border-t border-[#E9D8A6]/60">
+                  <a
+                    href={cv.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-[#9A7B2F] underline underline-offset-4 hover:text-[#70571F] transition"
+                  >
+                    View CV ↗
+                  </a>
+
+                  <a
+                    href={cv.file}
+                    download
+                    className="text-sm font-medium underline underline-offset-4 hover:text-[#9A7B2F] transition"
+                  >
+                    Download PDF ↓
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Preview */}
+      <section id="certifications-preview" className="py-20 scroll-mt-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
+            Certifications & Learning
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Growing through continuous learning.
+          </h2>
+
+          <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            Explore my certifications and learning experiences as I
+            continue developing my technical knowledge, software
+            development skills, and professional capabilities.
+          </p>
+
+          <div className="mt-8">
+            <Link
+              to="/certifications"
+              className="inline-block bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:bg-[#9A7B2F] transition"
+            >
+              View All Certifications →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* How I Learn */}
       <section className="bg-white py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
+            How I Learn
+          </p>
 
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Learning by building.
+          </h2>
+
+          <p className="mt-6 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
+            I combine structured learning with practical experimentation.
+            Instead of only studying concepts, I use projects to understand
+            how different technologies work together and how they can be
+            used to solve real problems.
+          </p>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
+            <GoalCard
+              title="Learn"
+              description="Develop strong foundations in programming, software engineering, databases, APIs, and modern development tools."
+            />
+
+            <GoalCard
+              title="Build"
+              description="Turn what I learn into practical projects that demonstrate technical skills and product thinking."
+            />
+
+            <GoalCard
+              title="Grow"
+              description="Continuously improve through feedback, new technologies, certifications, and hands-on experience."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Direction / Goals */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
             Direction
           </p>
@@ -503,9 +542,7 @@ function ChristineMartinHome() {
             digital products and building solutions that people can use.
           </p>
 
-
           <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
-
             <GoalCard
               title="Learn"
               description="Strengthen my understanding of software engineering and modern development practices."
@@ -513,24 +550,20 @@ function ChristineMartinHome() {
 
             <GoalCard
               title="Build"
-              description="Create practical digital products that demonstrate both technical ability and problem-solving."
+              description="Create practical digital products that demonstrate technical ability and problem-solving."
             />
 
             <GoalCard
               title="Grow"
               description="Gain professional experience, collaborate with other developers, and continue developing my technical career."
             />
-
           </div>
-
         </div>
       </section>
 
-
       {/* Contact */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="bg-white py-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
-
           <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
             Contact
           </p>
@@ -544,36 +577,29 @@ function ChristineMartinHome() {
             and grow within the technology and digital product space.
           </p>
 
-
           <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:bellarosennaji@gmail.com"
+              className="bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:bg-[#9A7B2F] transition"
+            >
+              Email Me
+            </a>
 
-  <a
-    href="mailto:bellarosennaji@gmail.com"
-    className="bg-[#2C2C2C] text-white px-7 py-3 rounded-full hover:opacity-90 transition"
-  >
-    📧 Email Me
-  </a>
-
-  <a
-    href="https://www.linkedin.com/in/christine-martin-a59691344/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="border border-[#2C2C2C] px-7 py-3 rounded-full hover:bg-[#2C2C2C] hover:text-white transition"
-  >
-    LinkedIn
-  </a>
-
-</div>
-
+            <a
+              href="https://www.linkedin.com/in/christine-martin-a59691344/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#2C2C2C] px-7 py-3 rounded-full hover:bg-[#2C2C2C] hover:text-white transition"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
         </div>
       </section>
 
-
       {/* Footer */}
       <footer className="bg-[#2C2C2C] text-white py-10">
-
         <div className="max-w-6xl mx-auto px-6 text-center">
-
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Christine Martin. All rights reserved.
           </p>
@@ -582,29 +608,25 @@ function ChristineMartinHome() {
             Aspiring Software Engineer & Digital Product Builder
           </p>
 
+          <a
+            href="#"
+            className="inline-block mt-4 text-sm text-[#E9D8A6] hover:text-white transition"
+          >
+            Back to top ↑
+          </a>
         </div>
-
       </footer>
-
     </div>
   );
 }
 
-
-/* -------------------------------- */
-/* Skill Card                       */
-/* -------------------------------- */
-
+/* Skill Card */
 function SkillCard({ title, items }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E9D8A6]/50 p-7 hover:shadow-lg transition">
-
-      <h3 className="text-xl font-semibold mb-5">
-        {title}
-      </h3>
+    <article className="bg-white rounded-2xl border border-[#E9D8A6]/50 p-7 hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold mb-5">{title}</h3>
 
       <div className="flex flex-wrap gap-2">
-
         {items.map((item) => (
           <span
             key={item}
@@ -613,18 +635,12 @@ function SkillCard({ title, items }) {
             {item}
           </span>
         ))}
-
       </div>
-
-    </div>
+    </article>
   );
 }
 
-
-/* -------------------------------- */
-/* Project Card                     */
-/* -------------------------------- */
-
+/* Project Card */
 function ProjectCard({
   title,
   category,
@@ -633,110 +649,65 @@ function ProjectCard({
   features,
 }) {
   return (
-    <article className="bg-white rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10 hover:shadow-lg transition">
+    <article className="bg-[#F8F4EF] rounded-3xl border border-[#E9D8A6]/50 p-8 md:p-10 hover:shadow-lg transition">
+      <div>
+        <p className="uppercase tracking-[0.15em] text-xs text-[#9A7B2F] mb-2">
+          {category}
+        </p>
 
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
-        <div>
-
-          <p className="uppercase tracking-[0.15em] text-xs text-[#9A7B2F] mb-2">
-            {category}
-          </p>
-
-          <h3 className="text-2xl md:text-3xl font-semibold">
-            {title}
-          </h3>
-
-        </div>
-
+        <h3 className="text-2xl md:text-3xl font-semibold">{title}</h3>
       </div>
-
 
       <p className="mt-5 text-[#6F6B63] leading-relaxed max-w-3xl">
         {description}
       </p>
 
-
       <div className="mt-6">
-
-        <p className="text-sm font-medium mb-3">
-          Technologies
-        </p>
-
-        <p className="text-sm text-[#777]">
+        <p className="text-sm font-medium mb-3">Technologies</p>
+        <p className="text-sm text-[#777] leading-relaxed">
           {technologies}
         </p>
-
       </div>
 
-
       <div className="mt-7">
+        <p className="text-sm font-medium mb-3">Key Features</p>
 
-        <p className="text-sm font-medium mb-3">
-          Key Features
-        </p>
-
-        <ul className="grid md:grid-cols-2 gap-2 text-sm text-[#6F6B63]">
-
+        <ul className="grid md:grid-cols-2 gap-3 text-sm text-[#6F6B63]">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
-              <span className="text-[#9A7B2F]">•</span>
+              <span className="text-[#9A7B2F]" aria-hidden="true">
+                •
+              </span>
               <span>{feature}</span>
             </li>
           ))}
-
         </ul>
-
       </div>
-
     </article>
   );
 }
 
-
-/* -------------------------------- */
-/* Goal Card                        */
-/* -------------------------------- */
-
+/* Goal Card */
 function GoalCard({ title, description }) {
   return (
-    <div className="bg-[#F8F4EF] rounded-2xl border border-[#E9D8A6]/40 p-7">
-
-      <h3 className="text-xl font-semibold">
-        {title}
-      </h3>
+    <article className="bg-[#F8F4EF] rounded-2xl border border-[#E9D8A6]/40 p-7">
+      <h3 className="text-xl font-semibold">{title}</h3>
 
       <p className="mt-3 text-[#6F6B63] leading-relaxed text-sm">
         {description}
       </p>
-
-    </div>
+    </article>
   );
 }
 
-
-/* -------------------------------- */
-/* React Router                     */
-/* -------------------------------- */
-
+/* React Router */
 export default function App() {
   return (
     <BrowserRouter>
-
       <Routes>
-
-        <Route
-          path="/"
-          element={<ChristineMartinHome />}
-        />
-
-        <Route
-          path="/certifications"
-          element={<Certifications />}
-        />
-
+        <Route path="/" element={<ChristineMartinHome />} />
+        <Route path="/certifications" element={<Certifications />} />
       </Routes>
-
     </BrowserRouter>
   );
 }
