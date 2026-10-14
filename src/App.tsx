@@ -5,23 +5,24 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import calmworkspace from "./calm-workspace.jpg";
 import Certifications from "./Certifications";
 
+
 const cvDocuments = [
   {
     title: "Administrative & Project Support",
     description:
-      "For administrative, project coordination, operations, and office support roles.",
+      "A CV focused on administrative support, coordination, scheduling, and office operations.",
     file: "/cvs/Christine-Martin-Administrative-CV.pdf",
   },
   {
     title: "Customer Support & Virtual Assistant",
     description:
-      "For remote customer service, virtual assistant, and client support opportunities.",
+      "A CV focused on customer communication, handling enquiries, records, and remote administrative support.",
     file: "/cvs/Christine-Martin-Customer-Support-CV.pdf",
   },
   {
     title: "Software Developer",
     description:
-      "For software development internships and junior technical opportunities.",
+      "A CV focused on computer science studies, technical skills, and software projects.",
     file: "/cvs/Christine-Martin-Software-Developer-CV.pdf",
   },
 ];
@@ -29,7 +30,8 @@ const cvDocuments = [
 function ChristineMartinHome() {
   return (
     <div className="min-h-screen bg-[#F8F4EF] text-[#2C2C2C] font-sans">
-      {/* Navigation */}
+     
+     {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-[#F8F4EF]/95 backdrop-blur border-b border-[#E9D8A6]/40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <Link
@@ -386,79 +388,80 @@ function ChristineMartinHome() {
       </section>
 
       {/* My CVs */}
-      <section id="my-cvs" className="py-20 bg-white scroll-mt-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.2em] text-sm text-[#9A7B2F] mb-3">
-              Professional Documents
-            </p>
+      
+<section
+  id="cvs"
+  className="py-20 px-6"
+  style={{ backgroundColor: "#F8F4EF", color: "#2C2C2C" }}
+>
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-12">
+      <p
+        className="text-sm uppercase tracking-widest mb-3"
+        style={{ color: "#9A7B2F" }}
+      >
+        My Resume
+      </p>
 
-            <h2 className="text-3xl md:text-4xl font-semibold">
-              My CVs
-            </h2>
+      <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+        My CVs
+      </h2>
 
-            <p className="mt-5 text-[#6F6B63] max-w-2xl mx-auto leading-relaxed">
-              Explore my professional experience, customer support
-              background, and developing skills in software engineering.
-              Each CV is tailored to a different career direction.
-            </p>
+      <p className="max-w-2xl mx-auto">
+        Explore or download the CV tailored to the role you are hiring for.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {cvDocuments.map((cv) => (
+        <article
+          key={cv.file}
+          className="rounded-2xl border p-6 flex flex-col"
+          style={{
+            backgroundColor: "#FFFFFF",
+            borderColor: "#E9D8A6",
+          }}
+        >
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+            style={{ backgroundColor: "#F8F4EF", color: "#9A7B2F" }}
+          >
+            <span className="font-semibold">PDF</span>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cvDocuments.map((cv) => (
-              <article
-                key={cv.file}
-                className="bg-[#F8F4EF] border border-[#E9D8A6]/70 rounded-2xl p-7 flex flex-col hover:shadow-lg transition"
-              >
-                <div className="w-12 h-12 rounded-xl bg-white border border-[#E9D8A6]/60 flex items-center justify-center mb-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="26"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <path d="M14 2v6h6M8 13h8M8 17h8" />
-                  </svg>
-                </div>
+          <h3 className="text-xl font-semibold mb-3">
+            {cv.title}
+          </h3>
 
-                <h3 className="text-xl font-semibold mb-3">
-                  {cv.title}
-                </h3>
+          <p className="text-sm leading-6 mb-6 flex-grow">
+            {cv.description}
+          </p>
 
-                <p className="text-sm text-[#6F6B63] leading-6 mb-6 flex-grow">
-                  {cv.description}
-                </p>
+          <div className="flex flex-wrap gap-3 mt-auto">
+            <a
+              href={cv.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full px-4 py-2 text-sm font-medium border"
+              style={{ borderColor: "#9A7B2F", color: "#2C2C2C" }}
+            >
+              View CV
+            </a>
 
-                <div className="flex flex-wrap gap-x-5 gap-y-3 pt-4 border-t border-[#E9D8A6]/60">
-                  <a
-                    href={cv.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#9A7B2F] underline underline-offset-4 hover:text-[#70571F] transition"
-                  >
-                    View CV ↗
-                  </a>
-
-                  <a
-                    href={cv.file}
-                    download
-                    className="text-sm font-medium underline underline-offset-4 hover:text-[#9A7B2F] transition"
-                  >
-                    Download PDF ↓
-                  </a>
-                </div>
-              </article>
-            ))}
+            <a
+              href={cv.file}
+              download
+              className="rounded-full px-4 py-2 text-sm font-medium"
+              style={{ backgroundColor: "#9A7B2F", color: "#FFFFFF" }}
+            >
+              Download PDF
+            </a>
           </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Certifications Preview */}
       <section id="certifications-preview" className="py-20 scroll-mt-24">
